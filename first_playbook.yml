@@ -1,0 +1,14 @@
+---
+
+- hosts: localhost
+  connection: local
+  become: yes
+  tasks:
+    - name: Install PHP7.2
+      command: apt  install -y php7.2
+    - name: Remove PHP5.6
+      command: apt remove -y php5.6
+    - name: Remove PHP5.6
+      command: apt autoremove -y
+    - name: Restart Apache service
+      command: systemctl restart apache2' >> /tmp/playbook.yml
